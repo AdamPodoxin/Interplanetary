@@ -7,21 +7,18 @@ public class GravityObject : MonoBehaviour
 {
     public Rigidbody2D rb;
 
-    private GravityObject[] gravityObjects;
+    public List<GravityObject> objectsInRange = new List<GravityObject>();
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
-        gravityObjects = FindObjectsOfType<GravityObject>();
     }
 
     private void FixedUpdate()
     {
-        foreach (GravityObject gravityObject in gravityObjects)
+        foreach (GravityObject gravityObject in objectsInRange)
         {
-            if (gravityObject != this)
-                ApplyGravity(gravityObject);
+            ApplyGravity(gravityObject);
         }
     }
 
@@ -33,8 +30,34 @@ public class GravityObject : MonoBehaviour
         float squareDistance = direction.sqrMagnitude;
 
         float forceMagnitude = (rb.mass * rbToAttract.mass) / squareDistance;
-        Vector2 force = direction.normalized * forceMagnitude;
+        Vector2 force = direction.normalized * forceMagnitude * 10;
 
         rbToAttract.AddForce(force);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        GravityObject enteredObject = collision.GetComponent<GravityObject>();
+
+        if (enteredObject != null)
+            enteredObject.ObjectEnteredRange(this);
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        GravityObject exitedObject = collision.GetComponent<GravityObject>();
+
+        if (exitedObject != null)
+            exitedObject.ObjectExitedRange(this);
+    }
+
+    public void ObjectEnteredRange(GravityObject gravityObject)
+    {
+        objectsInRange.Add(gravityObject);
+    }
+
+    public void ObjectExitedRange(GravityObject gravityObject)
+    {
+        objectsInRange.Remove(gravityObject);
     }
 }
