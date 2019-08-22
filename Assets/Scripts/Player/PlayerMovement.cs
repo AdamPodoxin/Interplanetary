@@ -8,7 +8,16 @@ public class PlayerMovement : MonoBehaviour
 
     private float movement;
 
+    private Rigidbody2D rb;
+    private Camera cam;
+
     private Transform inRangeOf;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        cam = Camera.main;
+    }
 
     private void Update()
     {
@@ -19,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
         {
             GetComponent<Rigidbody2D>().AddForce(transform.up * 10);
         }
+
+        cam.orthographicSize = rb.velocity.magnitude / 10f + 5f;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
