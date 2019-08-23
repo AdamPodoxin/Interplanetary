@@ -16,9 +16,9 @@ public class SpaceStation : MonoBehaviour
             GetComponent<Orbit>().enabled = false;
             GetComponent<Spaceship>().inControl = true;
 
-            Camera cam = Camera.main;
-            cam.orthographicSize = transform.lossyScale.x * transform.lossyScale.y / 30f;
-            cam.GetComponent<CameraMovement>().target = transform;
+            CameraMovement cam = Camera.main.GetComponent<CameraMovement>();
+            cam.ChangeOrthoSize(transform.lossyScale.x * transform.lossyScale.y / 30f);
+            cam.target = transform;
         }
     }
 }

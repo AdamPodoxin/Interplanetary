@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Spaceship"))
         {
             cam.GetComponent<CameraMovement>().target = collision.transform;
-            cam.GetComponent<CameraMovement>().cam.orthographicSize = 40;
+            cam.GetComponent<CameraMovement>().ChangeOrthoSize(40);
             collision.transform.GetComponent<Spaceship>().inControl = true;
             gameObject.SetActive(false);
         }
