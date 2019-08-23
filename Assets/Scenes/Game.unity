@@ -281,7 +281,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 627481005}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.89, z: 0}
+  m_LocalPosition: {x: 0, y: 51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 519420032}
@@ -337,6 +337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cb09fe18c59cb6489ffc5b1559041c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 3
 --- !u!114 &627481011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,6 +351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
+  objectsInRange: []
 --- !u!1001 &6124481136254375972
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -360,7 +362,7 @@ PrefabInstance:
     - target: {fileID: 6124481137515330149, guid: 3f1d5bd42b55c7a4080db9ccbc8e0efc,
         type: 3}
       propertyPath: m_Name
-      value: GravityObject
+      value: Planet A
       objectReference: {fileID: 0}
     - target: {fileID: 6124481137515330150, guid: 3f1d5bd42b55c7a4080db9ccbc8e0efc,
         type: 3}
@@ -416,6 +418,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6124481137515330150, guid: 3f1d5bd42b55c7a4080db9ccbc8e0efc,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6124481137515330150, guid: 3f1d5bd42b55c7a4080db9ccbc8e0efc,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6124481137515330145, guid: 3f1d5bd42b55c7a4080db9ccbc8e0efc,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f1d5bd42b55c7a4080db9ccbc8e0efc, type: 3}

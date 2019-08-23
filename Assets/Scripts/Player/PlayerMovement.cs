@@ -24,12 +24,7 @@ public class PlayerMovement : MonoBehaviour
         movement = Input.GetAxisRaw("Horizontal");
         transform.Translate(Vector2.right * movement * moveSpeed * Time.deltaTime);
 
-        if (Input.GetKey(KeyCode.Space))
-        {
-            GetComponent<Rigidbody2D>().AddForce(transform.up * 10);
-        }
-
-        cam.orthographicSize = rb.velocity.magnitude / 10f + 5f;
+        cam.orthographicSize = rb.velocity.magnitude / 0.3f + 5f;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
