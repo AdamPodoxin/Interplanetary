@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
         cam = Camera.main.transform;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         movement = Input.GetAxisRaw("Horizontal");
         transform.Translate(Vector2.right * movement * moveSpeed * Time.deltaTime);
@@ -25,14 +25,18 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        inRangeOf = collision.transform;
-
         if (collision.gameObject.CompareTag("Spaceship"))
         {
             cam.GetComponent<CameraMovement>().target = collision.transform;
+            cam.GetComponent<CameraMovement>().cam.orthographicSize = 40;
             collision.transform.GetComponent<Spaceship>().inControl = true;
             gameObject.SetActive(false);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        inRangeOf = collision.transform;
     }
 
     private void OnTriggerExit2D(Collider2D collision)

@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Spaceship
+  - Spaceship Dock
   layers:
   - Default
   - TransparentFX
