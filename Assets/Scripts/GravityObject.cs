@@ -7,7 +7,9 @@ public class GravityObject : MonoBehaviour
 {
     public Rigidbody2D rb;
 
-    public List<GravityObject> objectsInRange = new List<GravityObject>();
+    public bool attractOthers = true;
+
+    [SerializeField] private List<GravityObject> objectsInRange = new List<GravityObject>();
 
     private void Start()
     {
@@ -53,11 +55,11 @@ public class GravityObject : MonoBehaviour
 
     public void ObjectEnteredRange(GravityObject gravityObject)
     {
-        objectsInRange.Add(gravityObject);
+        if (attractOthers && !objectsInRange.Contains(gravityObject)) objectsInRange.Add(gravityObject);
     }
 
     public void ObjectExitedRange(GravityObject gravityObject)
     {
-        objectsInRange.Remove(gravityObject);
+        if (attractOthers) objectsInRange.Remove(gravityObject);
     }
 }

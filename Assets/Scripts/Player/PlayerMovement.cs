@@ -8,28 +8,31 @@ public class PlayerMovement : MonoBehaviour
 
     private float movement;
 
-    private Rigidbody2D rb;
-    private Camera cam;
+    private Transform cam;
 
     private Transform inRangeOf;
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        cam = Camera.main;
+        cam = Camera.main.transform;
     }
 
     private void Update()
     {
         movement = Input.GetAxisRaw("Horizontal");
         transform.Translate(Vector2.right * movement * moveSpeed * Time.deltaTime);
-
-        cam.orthographicSize = rb.velocity.magnitude / 0.3f + 5f;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         inRangeOf = collision.transform;
+
+        if (collision.gameObject.CompareTag("Spaceship"))
+        {
+            cam.GetComponent<CameraMovement>().target = collision.transform;
+            collision.transform.GetComponent<Spaceship>().inControl = true;
+            gameObject.SetActive(false);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
