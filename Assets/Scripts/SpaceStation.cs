@@ -8,10 +8,7 @@ public class SpaceStation : MonoBehaviour
     {
         if (collision.CompareTag("Spaceship Dock"))
         {
-            Transform spaceship = collision.transform.parent;
-            Destroy(spaceship.GetComponent<Rigidbody2D>());
-            spaceship.GetComponent<Spaceship>().inControl = false;
-            spaceship.SetParent(transform);
+            collision.transform.parent.gameObject.SetActive(false);
 
             GetComponent<Orbit>().enabled = false;
             GetComponent<Spaceship>().inControl = true;
