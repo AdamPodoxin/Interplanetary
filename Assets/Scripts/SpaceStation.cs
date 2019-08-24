@@ -8,6 +8,7 @@ public class SpaceStation : MonoBehaviour
     {
         if (collision.CompareTag("Spaceship Dock"))
         {
+            collision.transform.GetComponent<Spaceship>().FullyFuel();
             collision.transform.parent.gameObject.SetActive(false);
 
             GetComponent<Orbit>().enabled = false;

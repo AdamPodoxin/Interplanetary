@@ -282,6 +282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inControl: 0
   thrust: 160
+  fuel: 1000
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1097,6 +1098,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inControl: 0
   thrust: 100
+  fuel: 10000
 --- !u!114 &1860724456
 MonoBehaviour:
   m_ObjectHideFlags: 0
