@@ -28,9 +28,9 @@ public class GravityObject : MonoBehaviour
         Rigidbody2D rbToAttract = objectToAttract.rb;
 
         Vector2 direction = rb.position - rbToAttract.position;
-        float squareDistance = direction.sqrMagnitude;
+        float distance = direction.magnitude;
 
-        float forceMagnitude = (rb.mass * rbToAttract.mass) / squareDistance;
+        float forceMagnitude = (rb.mass * rbToAttract.mass) / Mathf.Pow(distance, 1.8f);
         Vector2 force = direction.normalized * forceMagnitude * 10;
 
         rbToAttract.AddForce(force);

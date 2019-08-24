@@ -197,15 +197,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 73912016}
-  m_LocalRotation: {x: 0, y: 0, z: 0.021814892, w: 0.999762}
-  m_LocalPosition: {x: -12.31, y: 254.7, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: -0.007068574, w: 0.999975}
+  m_LocalPosition: {x: 5.2, y: 254.7, z: 0}
   m_LocalScale: {x: 1, y: 10, z: 1}
   m_Children:
   - {fileID: 1888935706}
   - {fileID: 1358092830}
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 2.5}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.81}
 --- !u!61 &73912019
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -251,7 +251,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &73912021
 MonoBehaviour:
@@ -281,8 +281,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inControl: 0
-  thrust: 160
-  fuel: 1000
+  thrust: 420
+  fuel: 2500
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,7 +502,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &627481010
 MonoBehaviour:
@@ -731,7 +731,7 @@ Transform:
   m_GameObject: {fileID: 1358092829}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 50, y: 5, z: 1}
+  m_LocalScale: {x: 30, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 73912018}
   m_RootOrder: 1
@@ -808,7 +808,7 @@ Transform:
   m_GameObject: {fileID: 1390801635}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 1261150786}
   m_RootOrder: 0
@@ -1016,7 +1016,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1860724449}
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 1030, z: 0}
+  m_LocalPosition: {x: -0, y: 2600, z: 0}
   m_LocalScale: {x: 40.000015, y: 60.00003, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1067,7 +1067,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &1860724454
 MonoBehaviour:
@@ -1097,7 +1097,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inControl: 0
-  thrust: 100
+  thrust: 300
   fuel: 10000
 --- !u!114 &1860724456
 MonoBehaviour:
@@ -1515,6 +1515,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AngularDrag
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6124481137515330145, guid: 3f1d5bd42b55c7a4080db9ccbc8e0efc,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3516531810978933485, guid: 3f1d5bd42b55c7a4080db9ccbc8e0efc,
+        type: 3}
+      propertyPath: m_Radius
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f1d5bd42b55c7a4080db9ccbc8e0efc, type: 3}
